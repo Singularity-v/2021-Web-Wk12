@@ -28,7 +28,6 @@ export default function UserInfo(props) {
                ? <UserOutlined style={{ fontSize: '28px', color: '#ddd' }} />
                : <UserSwitchOutlined style={{ fontSize: '28px', color: '#ddd' }} />
                
-
             } */}
              <PofileIcon size={20}/>
             {/* <p className="cart-summary-text">
