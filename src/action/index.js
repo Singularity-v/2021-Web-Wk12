@@ -51,7 +51,7 @@ import {
   checkLoginApi
 } from "../api/index";
 
-export const addCartItem = (dispatch, product, qty,col,colNum) => {
+export const addCartItem = (dispatch, product, qty,col) => {
   const item = {
     id: product.id,
     category: product.category,
@@ -61,8 +61,7 @@ export const addCartItem = (dispatch, product, qty,col,colNum) => {
     author:product.author,
     countInStock: product.countInStock,
     qty,
-    col,
-    colNum
+    col
   };
   dispatch({
     type: ADD_CART_ITEM,
@@ -103,7 +102,7 @@ export const feedJSONToFirebase = async (dispatch) => {
   }
 }
 
-export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
+export const setProductDetail = async (dispatch, productId, qty,col) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
@@ -123,8 +122,7 @@ export const setProductDetail = async (dispatch, productId, qty,col,colNum) => {
           payload: {
             product,
             qty,
-            col,
-            colNum
+            col
                 }
               })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
@@ -321,7 +319,7 @@ export const activeNavItemSet = (dispatch, activeNavItem) => {
 //   return isLogin;
 // }
 
-// export const setProductDetail = (dispatch, productId, qty,col,colNum) => {
+// export const setProductDetail = (dispatch, productId, qty,col) => {
 //   const product = products.find(
 //     x => x.id === productId
 //   );
@@ -335,8 +333,7 @@ export const activeNavItemSet = (dispatch, activeNavItem) => {
 //     payload: {
 //       product,
 //       qty,
-//       col,
-//       colNum
+//       col
 //     }
 //   })
 // }

@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout;
 function Order({ match }) {
    return (
     <Layout className="main-layout">
-      <Layout className="bg-gray main-area">
+      <Layout className="main-area">
         <Header className="layout-header">
           <OrderHeader title={` ${match.params.orderId}`} />
         </Header>

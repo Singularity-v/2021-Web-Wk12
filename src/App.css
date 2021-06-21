@@ -1341,6 +1341,9 @@ ul {
   .login-form{
     width: 80%;
   }
+  .register-form{
+    width: 100% !important;
+  }
 }
 /* Register Page */
 .layout-content{
@@ -1358,8 +1361,8 @@ ul {
   padding: 5rem 0 5rem 0;
 }
 .register-form{
-  width: 50%;
-
+  width: 40%;
+  margin-top: 4rem;
 }
 .Register-title{
   font-size: 20px;
@@ -1513,15 +1516,17 @@ ul {
   width: 80%;
 }
 .placeOrder__button{
-  margin-top:10px;
+  margin-top:50px;
   width: 100%;
-  height: 40px;
+  height: 50px;
+  border-radius: 5px;
   background-color: #426393;
 }
 .card-bottom {
   width: 90%;
   border-bottom: 0.05rem #426393 solid ;
-  margin-bottom:10px;
+  margin-bottom:30px;
+  margin-top:30px;
 }
 .card-bottom2 {
   border-bottom: 0.1rem #FFC72D solid ;
@@ -1547,6 +1552,15 @@ ul {
   background-color: #fbfbfb;
   padding: 1.5rem !important;
   border-radius: 5px;
+}
+.qtyPrice{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.order-cart-price{
+  font-weight: bold;
+  width: auto;
 }
 .card{
   margin-bottom: 5px;
@@ -1584,14 +1598,18 @@ ul {
   height: 50px;
   border-radius: 5px;
   background-color: #426393;
-
 }
 
 .order-cart-item-content{
   display: flex;
   flex-direction: column;
   padding-left:10px;
-
+}
+.order-card-bottom{
+  width: 75%;
+  border-bottom: 0.05rem #426393 solid ;
+  margin-bottom:30px;
+  margin-top:30px;
 }
 .order-cart-item{
   display: flex;
@@ -1614,21 +1632,38 @@ ul {
 }
 
 .order-cart-name{
-  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 .order-item{
-  font-size: 12px;
   padding-top: 5px;
+  line-height: 25px;
 }
 .order-cart-item-end{
   display: flex;
-  align-items: flex-end;
   justify-content: flex-end;
-
+  
 }
 @media (max-width: 992px) {
   .header-title-sm{
     text-align: center;
     color:#FFC72D;
+  }
+  .order-cart-image {
+    width: 100%;
+  }
+  .order-item{
+    width: 100%;
+  }
+  .order-cart-item-content{
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px;
+  }
+  .card-bottom{
+    width: 100%;
+  }
+  .order-card-bottom{
+    width: 100%;
   }
 }
