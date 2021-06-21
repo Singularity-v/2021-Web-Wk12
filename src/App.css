@@ -1647,6 +1647,42 @@ ul {
   justify-content: flex-end;
   
 }
+.order-modal-btn{
+  width: 30%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #FFC72D;
+}
+.order-modal-btn2{
+  width: 30%;
+  height: 50px;
+  border-radius: 5px;
+  color:#FFC72D;
+}
+.order-smile{
+  margin-bottom: 1rem;
+}
+.order-btn{
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  cursor: pointer;
+}
+.order-btn2{
+  margin-top: 2rem;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+.order-name{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+}
+.ant-btn > span {
+  display:0;
+}
 @media (max-width: 992px) {
   .header-title-sm{
     text-align: center;
