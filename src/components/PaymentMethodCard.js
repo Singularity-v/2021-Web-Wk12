@@ -23,8 +23,8 @@ export default function PaymentMethodCard() {
          form={form}
       >
 
-         <Form.Item name="paymentMethod" label="Payment Method: ">
-            <Radio.Group>
+         <Form.Item name="paymentMethod"className="paymet-item" label="Payment Method: ">
+            <Radio.Group className="radio">
                <Radio value="Google">Google</Radio>
                <Radio value="PayPal">PayPal</Radio>
                <Radio value="Line">Line</Radio>

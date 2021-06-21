@@ -29,9 +29,9 @@ function ProductDetail() {
             </Col>
             <Col  className="shop-top-right" lg={{span:7, offset:1}} sm={{ span: 17 }} xs={{ span:18 }}>
                 <div className="shop-top-right-container">
-                <h2 className="product-name">
+                    <div className="product-category">
                         {product.category}
-                    </h2>
+                    </div>
                     <h2 className="product-name">
                         {product.name}
                     </h2>    
@@ -61,7 +61,7 @@ function ProductDetail() {
                             <Select 
                                 defaultValue={qty} 
                                 className="select-style"
-                                onChange={val => setProductDetail(dispatch, product.id, val,col)}
+                                onChange={val => setProductDetail(dispatch, product.id, val,col, product.category)}
                             >
                                 {[...Array(product.countInStock).keys()].map((x) => (
                                     <Option key={x + 1} value={x + 1}>

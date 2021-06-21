@@ -11,13 +11,14 @@ export default function ProductList(){
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
   return(
       <div  className="product">
-          <img alt="" className="header-pic"src="https://img.onl/u7zjYS"/>
+          <img alt="" className="header-pic"src="https://raw.githubusercontent.com/shakuneko/icon/master/Slogan.png"/>
             
             <div className="big-container">
               <div  className="text-center">
                 <h4 >Hot Products</h4>
                 <div className="more">
                   <p >More...</p>
+                 
                 </div>
                 {loading
         ? (
@@ -36,6 +37,7 @@ export default function ProductList(){
                       xxl={{ span: 6 }}
                      
                     >
+                      
                       <ProductItem  product={product}/>
                     </Col>
                   ))}
@@ -53,7 +55,7 @@ export default function ProductList(){
                     </Col>
                   ))}
                 </Row>
-        )
+        
               </div>
             </div>
       

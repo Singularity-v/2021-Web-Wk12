@@ -1,6 +1,6 @@
 import { Button, Select } from "antd";
 import { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { StoreContext } from "../store"
 import Cookie from "js-cookie"
 import { addCartItem, removeCartItem, setProductDetail } from "../action";
@@ -10,12 +10,16 @@ const { Option } = Select;
 export default function CartModal() {
    const { state: {cart:{ cartItems }}, dispatch } = useContext(StoreContext);
    // const handleCancel = () => toggleModal(!isModalVisible);
+   const history = useHistory();
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
    }
-
+   const checkoutHandler = (e) => {
+      e.preventDefault();
+      history.push("/login?redirect=shipping");
+   }
    useEffect(()=>{
       Cookie.set("cartItems", JSON.stringify(cartItems));
      }, [cartItems])
@@ -24,8 +28,8 @@ export default function CartModal() {
       <div className=" shopcart-container " >
             <div className="shopping-container">
                <h4 className="shopcart">Shop Cart</h4>
-               <h4 className="shopping-title-product">Product</h4>
-               <div className="cart-item-title">
+               <h4 className="shopping-title-productvc xs-none">Product</h4>
+               <div className="cart-item-title xs-none">
                   <div className="cart-item-title2">
                      <p className="shopping-item-content">Color</p>
                      <p className="shopping-item-content">Quantity</p>
@@ -138,7 +142,9 @@ export default function CartModal() {
                      </Link>
                      <Link className="cart-btn2">
                         <Button
-                           className="cart-modal-btn-right  " type="warning" danger>
+                           className="cart-modal-btn-right" 
+                           type="warning" 
+                           onClick={checkoutHandler}>
                            <span>Checkout</span>
                         </Button>
                      </Link>

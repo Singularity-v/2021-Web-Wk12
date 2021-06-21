@@ -6,13 +6,15 @@ const { Header, Content, Footer } = Layout;
 
 function PlaceOrder() {
   return (
-    <Layout className="container main-layout">
+    <Layout className="main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Place Order Page" step1 step2 step3 step4 />
+          <ShippingHeader title="Order" step1 step2 step3  />
         </Header>
-        <Content className="layout-content">
+        <Content className="PlaceOrder-content">
+          <div className="PlaceOrder-content-sm">
            <PlaceOrderCard />
+           </div>
         </Content>
         <Footer className="layout-footer">
           <AppFooter />

@@ -6,12 +6,12 @@ const { Header, Content, Footer } = Layout;
 
 function Payment() {
   return (
-    <Layout className="container main-layout">
+    <Layout className=" main-layout">
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <ShippingHeader title="Payment Method Page" step1 step2 step3 />
+          <ShippingHeader title="Payment" step1 step2  />
         </Header>
-        <Content className="layout-content">
+        <Content className="Payment-content">
            <PaymentMethodCard />
         </Content>
         <Footer className="layout-footer">

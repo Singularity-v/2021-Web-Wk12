@@ -27,7 +27,7 @@ const ProfileCard = () => {
     history.push("/");
   };
   useEffect(()=>{
-    getUserOrders();
+    getUserOrders(dispatch);
   }, [userInfo])
   return (
     <Form
@@ -38,7 +38,7 @@ const ProfileCard = () => {
       initialValues={userInfo}
     >
       <Form.Item
-        label="name: "
+        label="Name: "
         name="name"
         rules={[
           {
@@ -54,7 +54,7 @@ const ProfileCard = () => {
         <Input placeholder={displayName} />
       </Form.Item>
       <Form.Item
-        label="email: "
+        label="E-mail: "
         name="email"
         rules={[
           {
@@ -84,7 +84,7 @@ const ProfileCard = () => {
 
       <Form.Item
         name="rePassword"
-        label="Re-enter Password"
+        label="Re Enter Password"
         dependencies={["password"]}
         hasFeedback
         rules={[
@@ -106,43 +106,42 @@ const ProfileCard = () => {
       >
         <Input.Password />
       </Form.Item>
+      <Form.Item  
+       name="Check Your Order"
+       label="Check Your Order"
+       >
+      <Select style={{width:"100%"}} defaultValue={" "}>
+        {userOrders.orders.map(order => (
+          <Option>
+            <Link to={`/order/${order.id}`}>
+            <p className="order-id">Order ID: {order.id}</p>
+            </Link>
+          </Option>
+          ))}
+      </Select> 
+      </Form.Item>
 
       <Form.Item>
         <Button
           type="primary"
           htmlType="submit"
           className="login-form__button"
+          size="large"
         >
           Submit
         </Button>
 
         <Button
-          type="danger"
+          type="warning"
           style={{ marginTop: "0.8rem" }}
-          className="login-form__button"
+          className="logout-form__button"
+          size="large"
           onClick={handleLogout}
         >
           Log out
         </Button>
       </Form.Item>
-      <p style={{textAlign:"center",fontSize:"20px"}}>訂單列表</p>
-      <Select style={{width:"100%"}} defaultValue={"選擇你要查詢的訂單"}>
-        {userOrders.orders.map(order => (
-          <Option>
-            <Link to={`/order/${order.id}`}>
-              <div  style={{width:"100%",marginBottom:"10px",borderWidth:"0",display:"flex",paddingTop:"10px"}}>
-                <div className="order-block" style={{color:"#46A3FF"}}>
-                  <p className="order-id">Order ID: {order.id}</p>
-                  <p >Order Items: {order.orderItems.map(x => (x.name))}</p>
-                  <p className="order-tex">Tex Price: {order.taxPrice}</p>
-                  <p className="order-shipping">Shipping Price: {order.shippingPrice}</p>
-                  <p className="order-total">Total Price: {order.totalPrice}</p>
-                </div>
-              </div>
-            </Link>
-          </Option>
-          ))}
-      </Select>
+     
     </Form>
   );
 };
