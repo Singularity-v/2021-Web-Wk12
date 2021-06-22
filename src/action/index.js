@@ -48,7 +48,6 @@ import {
   createOrderApi,
   getOrderById,
   getOrderByUser,
-  checkLoginApi
 } from "../api/index";
 
 export const addCartItem = (dispatch, product, qty,col) => {
@@ -61,7 +60,8 @@ export const addCartItem = (dispatch, product, qty,col) => {
     author:product.author,
     countInStock: product.countInStock,
     qty,
-    col
+    col,
+    
   };
   dispatch({
     type: ADD_CART_ITEM,
@@ -122,7 +122,8 @@ export const setProductDetail = async (dispatch, productId, qty,col) => {
           payload: {
             product,
             qty,
-            col
+            col,
+
                 }
               })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
@@ -319,7 +320,7 @@ export const activeNavItemSet = (dispatch, activeNavItem) => {
 //   return isLogin;
 // }
 
-// export const setProductDetail = (dispatch, productId, qty,col) => {
+// export const setProductDetail = (dispatch, productId, qty,col,colNum) => {
 //   const product = products.find(
 //     x => x.id === productId
 //   );
@@ -333,7 +334,8 @@ export const activeNavItemSet = (dispatch, activeNavItem) => {
 //     payload: {
 //       product,
 //       qty,
-//       col
+//       col,
+//       colNum
 //     }
 //   })
 // }
