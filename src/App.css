@@ -194,6 +194,9 @@ h3 {
   .menu1 {
     font-size: 0.7rem;
   }
+  .header-pic{
+    height:250px;
+  }
 } 
 
 /* hammenu(Drawer) */
@@ -341,6 +344,7 @@ h5 {
   padding: 1rem;
   text-align: left;
 }
+
 /* designer */
 .designer-container {
   width: 100%;
@@ -708,6 +712,15 @@ ul {
     width: 35%;
   }
 }
+
+/* shop */
+@media (max-width: 992px) {
+  .shop>.big-container{
+    display: flex;
+    flex-direction: column;
+  }
+} 
+
 
 /*product-detail*/
 .detail-container{
@@ -1680,9 +1693,7 @@ ul {
   align-items: center;
 
 }
-.ant-btn > span {
-  display:0;
-}
+
 @media (max-width: 992px) {
   .header-title-sm{
     text-align: center;

@@ -5,6 +5,7 @@ import { CloseOutlined } from '@ant-design/icons';
 
 export default function HamMenu({  visible, onClose })    {
     return (
+        <NavLink to="/" >
             <Drawer
             destroyOnClose
             title=" Your Home "
@@ -35,11 +36,19 @@ export default function HamMenu({  visible, onClose })    {
                     </NavLink>
                 </div>
                 <div className=" ham-menu-icons ">
-                    <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
-                    <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
-                    <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png"/> 
+                <img alt="" className="ham-menu-icon1" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-search.png"/>
+                <NavLink to="/profile" className="ham-menu-icon1">
+                    <img alt="" src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-account.png"/>
+                </NavLink>
+                <NavLink to="/shopping" className="ham-menu-icon1">
+                    <img alt=""src="https://raw.githubusercontent.com/shakuneko/icon/master/yh-cart.png"/> 
+                </NavLink>
+
+                    
                 </div>
             </Drawer>
+        </NavLink>
+            
             
     
     );

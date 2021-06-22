@@ -7,7 +7,7 @@ import ShopNavBar from "../components/ShopNavBar";
 const { Sider } = Layout;
 export default function Shopproduct(){
     return(
-        <div  className="product">
+        <div  className="product shop">
             <div className="big-container">       
                 <h4 >Shop</h4>
                     <Layout className="bg-gray">

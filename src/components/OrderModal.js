@@ -29,8 +29,9 @@ const { state: { cart, orderInfo: { loading, success, order } }, dispatch } = us
          visible={isModalVisible}
          onCancel={handleCancel}
          footer={null}
+         className="order-modal"
       >
-          <div  className="order-btn">
+        <div  className="order-btn">
           <div className="order-smile"><SmileOutlined style={{ color: '#FFC72D'  ,fontSize: '50px'}} /></div>
           <div >Payment Successful!</div>
 
